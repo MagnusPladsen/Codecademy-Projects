@@ -6,6 +6,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 25rem;
+    margin-top: -1.2rem;
   }
   
   .SearchBar-sort-options ul {
