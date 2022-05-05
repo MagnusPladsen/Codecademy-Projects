@@ -1,5 +1,7 @@
 // IMPORT
 import React from 'react';
+import './Business.css';
+
 
 // OBJECT: Business
 const business = {
@@ -19,22 +21,25 @@ class Business extends React.Component {
         return (
             <div classname="Business">
                 <div classname="image-container">
-                    <img src='https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg' alt=''/>
+                    <img src='{business.imageSrc}' alt='Image of Pizza'/>
                 </div>
-                <h2>MarginOtto Pizzeria</h2>
+                <h2>{business.name}</h2>
                 <div classname="Business-information">
                     <div classname="Business-address">
-                        <p>1010 Paddington Way</p>
-                        <p>Bordertown</p>
-                        <p>NY 10101</p>
+                        <p>{business.address}</p>
+                        <p>{business.city}</p>
+                        <p>{business.state} {business.zipCode}</p>
                     </div>
                     <div classname="Business-reviews">
-                        <h3>ITALIAN</h3>
-                        <h3 classname="rating">4.5 stars</h3>
-                        <p>90 reviews</p>
+                        <h3>{business.category}</h3>
+                        <h3 classname="rating">{business.rating} stars</h3>
+                        <p>{business.reviewCount} reviews</p>
                     </div>
                 </div>
             </div>
         )
     }
 }
+
+// EXPORT
+export default Business;
