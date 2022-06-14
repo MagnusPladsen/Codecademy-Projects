@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 import { useSelector } from 'react-redux'
 
 
-export const selectTopic = state => state.topics.topics
+export const selectTopic = (state) => state.topics.topics
 
 const topicsSlice = createSlice({
     name: 'topics',
     initialState: {
-        topics: {} //kanskje array???
+        topics: {} 
     },
     reducers: {
         addTopic: (state, action) => {
@@ -22,6 +22,7 @@ const topicsSlice = createSlice({
         addQuizId: (state, action) => {
             const { quizId, topicId } = action.payload;
             state.topics[topicId].quizIds.push(quizId);
+            console.log('kjører igjennom addQuizId')
         },
     }
 })
