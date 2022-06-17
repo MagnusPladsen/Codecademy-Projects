@@ -21,7 +21,7 @@ function App() {
         <Route path='/articles/:title'>
           <Article />
         </Route>
-        <Route path='/authors/:author'>
+        <Route path='/authors/:name'>
           <Author />
         </Route>
         {/* statically render the component based on the route */}
