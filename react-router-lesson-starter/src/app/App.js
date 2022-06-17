@@ -8,7 +8,7 @@ import Article from "../components/Article";
 import Categories from "../components/Categories";
 import Author from "../components/Author";
 import Profile from "../components/Profile";
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, NavLink, Switch } from 'react-router-dom';
 
 import "./App.css";
 
@@ -17,29 +17,31 @@ function App() {
     <Router>
       <Header />
       <main>
-        {/* dynamically render the component based on the route */}
-        <Route path='/articles/:title'>
-          <Article />
-        </Route>
-        <Route path='/authors/:name'>
-          <Author />
-        </Route>
-        {/* statically render the component based on the route */}
-        <Route path='/about'>
-          <About />
-        </Route>
-        <Route path='/sign-up'>
-          <SignUp />
-        </Route>
-        <Route path='/articles'>
-          <Articles />
-        </Route>
-        <Route path='/categories'>
-          <Categories />
-        </Route>
-        <Route path='/profile'>
-          <Profile />
-        </Route>
+        <Switch>
+          {/* dynamically render the component based on the route */}
+          <Route path='/articles/:title'>
+            <Article />
+          </Route>
+          <Route path='/authors/:name'>
+            <Author />
+          </Route>
+          {/* statically render the component based on the route */}
+          <Route path='/about'>
+            <About />
+          </Route>
+          <Route path='/sign-up'>
+            <SignUp />
+          </Route>
+          <Route path='/articles'>
+            <Articles />
+          </Route>
+          <Route path='/categories'>
+            <Categories />
+          </Route>
+          <Route path='/profile'>
+            <Profile />
+          </Route>
+        </Switch>
       </main>
       <Footer />
     </Router>
