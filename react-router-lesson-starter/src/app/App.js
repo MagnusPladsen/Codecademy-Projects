@@ -17,6 +17,14 @@ function App() {
     <Router>
       <Header />
       <main>
+        {/* dynamically render the component based on the route */}
+        <Route path='/articles/:title'>
+          <Article />
+        </Route>
+        <Route path='/authors/:author'>
+          <Author />
+        </Route>
+        {/* statically render the component based on the route */}
         <Route path='/about'>
           <About />
         </Route>
